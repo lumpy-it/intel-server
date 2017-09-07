@@ -32,6 +32,10 @@ export default class Formatter {
 
     async processPing(ping: any) {
         const route = this.config.routes[ping.account];
+        if(route == undefined) {
+            console.log("ping from unknown source");
+            return;
+        }
         const e = this.fromStyle(route.style);
         e.setAuthor(route.alias,"https://lumpy.eu/img/ping.png");
         e.addField('Sender', ping.sender);
