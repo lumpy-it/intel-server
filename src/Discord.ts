@@ -17,7 +17,7 @@ export default class IntelDiscord {
         this.ready = true;
         let channelNames = Object.values(this.config.routes).map((x) => x.destination);
         for(let c of channelNames) {
-            this.channels[c] = this.client.channels.find("name",c);
+            this.channels[c] = (<any>this.client.channels).find("name",c);
         }
     }
 
