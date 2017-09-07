@@ -48,6 +48,12 @@ export default class Formatter {
 
         await this.discord.sendEmbed(route.destination, e);
     }
+    
+    async processDebug(message: any) {
+        const route = this.config.routes["debug"];
+
+        await this.discord.sendMessage(route.destination, message);
+    }
 
     private fromStyle(styleKey: string) {
         let e = new RichEmbed();

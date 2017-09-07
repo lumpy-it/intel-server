@@ -37,4 +37,8 @@ export default class IntelDiscord {
     sendEmbed = async (channel: string, embed: Discord.RichEmbed) => {
         this.channels[channel].send({embed});
     }
+
+    sendMessage = async(channel: string, message: string) => {
+        this.channels[channel].send(message);
+    }
 }
