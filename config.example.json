@@ -1,0 +1,24 @@
+{
+    "styles": {
+        "stylenamehere": {
+            "color": "RED",
+            "img": "http://blabla"
+        }
+    },
+    "routes": {
+        "Mails": {
+            "style": "stylenamehere",
+            "destination": "channel"
+        },
+        "XXX@XXX.com/": {
+            "style": "stylenamehere",
+            "destination": "blablabla-pings",
+            "alias": "blabla Ping"
+        }
+    },
+    "discord": {
+        "token": "botusertoken"
+    },
+    "api_token": "secret",
+    "port": 7000
+}
