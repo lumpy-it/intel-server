@@ -24,6 +24,7 @@ export default class IntelDiscord {
     
     cleanText(text: string): string {
         text = text.replace(/<br>/g,'\n');
+        text = text.replace(/<BR>/g,'\n');
         text = text.replace(/&gt;/g,'>');
         text = text.replace(/(<([^>]+)>)/ig, '');
         
