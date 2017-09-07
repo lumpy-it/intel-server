@@ -1,0 +1,30 @@
+{
+  "name": "intel-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "node dist/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lumpy-it/intel-server.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lumpy-it/intel-server/issues"
+  },
+  "homepage": "https://github.com/lumpy-it/intel-server#readme",
+  "devDependencies": {
+    "@types/body-parser": "^1.16.5",
+    "@types/express": "^4.0.37",
+    "typescript": "^2.5.2"
+  },
+  "dependencies": {
+    "@types/moment": "^2.13.0",
+    "body-parser": "^1.17.2",
+    "discord.js": "^11.2.1",
+    "express": "^4.15.4"
+  }
+}
