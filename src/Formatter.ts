@@ -12,8 +12,18 @@ export default class Formatter {
     }
 
     async processMessage(message: Message) {
-        const route = this.config.routes[message.keyName];
-        
+        let route: Route = undefined;
+        if(message.mailingListName != '') {
+            route = this.config.routes[message.mailingListName];
+        }
+        if(route == undefined) {
+            route = this.config.routes[message.keyName];
+        }
+        if(route == undefined) {
+            console.log("mail from unknown source");
+            console.log(message);
+            return;
+        }
         const e = this.fromStyle(route.style);
 
         e.setAuthor(message.mailingListName,"https://lumpy.eu/img/mail.png");
