@@ -3,6 +3,7 @@ interface Config {
     routes: {[key: string]: Route}
     discord: DiscordConfig;
     api_token: string;
+    port: number;
 }
 
 interface Style {

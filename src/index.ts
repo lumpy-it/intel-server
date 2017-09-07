@@ -2,10 +2,6 @@ import * as express from 'express';
 import * as bodyParser from 'body-parser';
 import * as bearerToken from 'express-bearer-token';
 
-import * as moment from 'moment';
-
-import * as Discord from 'discord.js';
-
 import IntelDiscord from './Discord.js';
 import Formatter from './Formatter.js';
 
@@ -39,9 +35,8 @@ app.post("/mails", (req, res) => {
 });
 
 app.post("/pings", (req, res) => {
-    console.log(req.body);
     formatter.processPing(req.body);
-    res.end();
+    res.status(200).send("Success").end();
 });
 
 app.post("/test", (req, res) => {
@@ -62,17 +57,12 @@ app.post("/test", (req, res) => {
         mailingListName: 'SYN.OP'
     };
     
-    mails.processMessage(message);
+    formatter.processMessage(message);
 
     res.json({result: "Success"});
 });
 
-app.listen(7000, () => {
+app.listen(config.port, () => {
     console.log("Intel App running on Port 7000");
     console.log("  Press CTRL-C to stop\n");
 });
-
-
-
-
-
