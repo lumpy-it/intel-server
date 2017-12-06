@@ -17,7 +17,7 @@ export default class Formatter {
             route = this.config.routes[message.mailingListName];
         }
         if(route == undefined) {
-            route = this.config.routes[message.keyName];
+            route = this.config.routes[message.keyName.toLowerCase()];
         }
         if(route == undefined) {
             console.log("mail from unknown source");
@@ -41,9 +41,10 @@ export default class Formatter {
     }
 
     async processPing(ping: any) {
-        const route = this.config.routes[ping.account];
+        const route = this.config.routes[ping.account.toLowerCase()];
         if(route == undefined) {
             console.log("ping from unknown source");
+            console.log(ping);
             return;
         }
         const e = this.fromStyle(route.style);
